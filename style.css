@@ -173,7 +173,7 @@
 }
 
 .section-label {
-    color: #8B6D34;
+    color: #66490b;
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -208,7 +208,7 @@
 }
 
 .experience .section-label {
-    color: #D6B56D;
+    color: #66490b;
 }
 
 .experience-heading h2 {
@@ -266,4 +266,107 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     line-height: 1.7;
+}
+
+/* Education Section */
+.education {
+    padding: 100px 7%;
+    background-color: #F5F3EA;
+}
+
+.education-heading {
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+.education-heading h2 {
+    color: #082F24;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.education-heading>p:last-child {
+    color: #36463D;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.education-list {
+    max-width: 900px;
+    display: grid;
+    gap: 16px;
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 24px 28px;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E0D4;
+    border-radius: 10px;
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(8, 47, 36, 0.08);
+}
+
+.education-year {
+    flex-shrink: 0;
+    color: #66490b;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 50px;
+}
+
+.education-item h3 {
+    color: #082F24;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.education-item p {
+    color: #5C685F;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.social-icon {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #C5A66A;
+    border-radius: 50%;
+    color: #F5F3EA;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #C5A66A;
+    color: #082F24;
+    transform: translateY(-3px);
 }

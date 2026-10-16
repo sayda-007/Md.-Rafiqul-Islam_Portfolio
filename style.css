@@ -623,6 +623,12 @@
     transform: translateY(-3px);
 }
 
+.contact-svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
 /* Footer */
 .footer,
 .footer-reference {
@@ -658,7 +664,7 @@
     display: inline-block;
     color: #F5F3EA;
     font-family: 'Playfair Display', serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
@@ -668,7 +674,7 @@
 .footer-tagline {
     flex: 1;
     color: #DCE7E0;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
     white-space: nowrap;
     margin: 0;
@@ -709,7 +715,7 @@
 /* Copyright */
 .footer-copyright {
     color: #DCE7E0;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6;
     white-space: nowrap;
     margin: 0;
@@ -977,4 +983,25 @@
         -webkit-mask-image: none;
         mask-image: none;
     }
+}
+
+
+/* Full-color social media icons */
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-socials img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Keep the footer's existing circular icon backgrounds */
+.footer-socials a {
+    overflow: hidden;
 }

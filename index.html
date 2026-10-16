@@ -372,6 +372,7 @@
 
     </main>
 
+
     <script>
         const cvButton = document.getElementById('cv-download-confirm');
         const cvToast = document.getElementById('cv-toast');
@@ -387,53 +388,30 @@
 
             toastTimer = setTimeout(() => {
                 cvToast.classList.remove('show');
-            }, 3500);
+            }, 3000);
         }
 
-        cvButton.addEventListener('click', async function (event) {
+        cvButton.addEventListener('click', function (event) {
+            // Prevent the default link behavior
             event.preventDefault();
 
             // Close the confirmation popup
             cvToggle.checked = false;
 
-            // Show the loading notification
-            showCVToast('Downloading your CV…');
+            // Show the toast notification
+            showCVToast('Your CV will be downloaded to your device…');
 
-            try {
-                // Wait for the PDF to be received
-                const response = await fetch(cvButton.href);
+            // Start the browser download
+            const downloadLink = document.createElement('a');
+            downloadLink.href = cvButton.href;
+            downloadLink.download = cvButton.getAttribute('download');
 
-                if (!response.ok) {
-                    throw new Error('Unable to download the CV.');
-                }
-
-                const pdfBlob = await response.blob();
-                const fileURL = URL.createObjectURL(pdfBlob);
-
-                // Start downloading the received PDF
-                const downloadLink = document.createElement('a');
-                downloadLink.href = fileURL;
-                downloadLink.download =
-                    cvButton.getAttribute('download');
-
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-                downloadLink.remove();
-
-                // Release the temporary file URL
-                setTimeout(() => {
-                    URL.revokeObjectURL(fileURL);
-                }, 1000);
-
-                // Show success notification
-                showCVToast('CV has been downloaded!');
-
-            } catch (error) {
-                console.error(error);
-                showCVToast('Download failed. Please try again.');
-            }
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
         });
     </script>
+
 
 </body>
 

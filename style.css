@@ -161,3 +161,37 @@
     border-radius: 20px;
     border: 2px solid rgba(197, 166, 106, 0.7);
 }
+
+/* About Section */
+.about {
+    padding: 100px 7%;
+    background-color: #F5F3EA;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.section-label {
+    color: #8B6D34;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.about-heading h2 {
+    color: #082F24;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.25;
+}
+
+.about-content p {
+    color: #36463D;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}

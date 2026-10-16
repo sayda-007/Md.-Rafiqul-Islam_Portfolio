@@ -1005,3 +1005,17 @@
 .footer-socials a {
     overflow: hidden;
 }
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}

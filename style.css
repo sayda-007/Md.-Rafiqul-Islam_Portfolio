@@ -165,27 +165,27 @@
 
 /* About Section */
 .about {
-    padding: 100px 7%;
+    padding: 90px 7%;
     background-color: #F5F3EA;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: start;
+    gap: 40px;
+    align-items: center;
 }
 
-.section-label {
-    color: #D6B56D;
+.about .section-label {
+    color: #8B6D34;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .about-heading h2 {
     color: #082F24;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(30px, 3.5vw, 44px);
     line-height: 1.25;
 }
 
@@ -193,9 +193,33 @@
     color: #36463D;
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
-    line-height: 1.9;
-    margin-bottom: 20px;
+    line-height: 1.75;
+    margin-bottom: 16px;
 }
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 55px 6%;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .about-content p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 14px;
+    }
+}
+
 
 /* Experience Section */
 .experience {
@@ -735,9 +759,6 @@
 }
 
 
-
-
-
 /* Responsive Navbar — Tablet */
 @media (max-width: 900px) {
     .navbar {
@@ -798,108 +819,123 @@
 }
 
 
-
-
-
-
 /* =========================
-   Responsive Hero Section
+   Hero Section Responsive Fix
 ========================= */
 
-/* Base Hero Fixes */
-.hero {
-    min-height: calc(100vh - 76px);
-    height: auto;
-    overflow: hidden;
-}
-
-.hero-content {
-    min-width: 0;
-}
-
-.hero-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Tablet and Smaller Laptops */
+/* Hero Section — Tablet */
 @media (max-width: 900px) {
     .hero {
-        flex-direction: column;
-        justify-content: center;
+        min-height: calc(100vh - 76px);
+        height: auto;
+        flex-direction: row;
         align-items: center;
-        gap: 40px;
-        padding: 60px 6%;
-        text-align: center;
+        justify-content: space-between;
+        gap: 25px;
+        padding: 50px 5%;
+        text-align: left;
     }
 
     .hero-content {
-        width: 100%;
+        flex: 1 1 0;
+        min-width: 0;
         max-width: 650px;
     }
 
     .hero-label {
-        font-size: 12px;
-        line-height: 1.8;
-        letter-spacing: 1.5px;
+        font-size: 10px;
+        line-height: 1.7;
+        letter-spacing: 0.7px;
     }
 
     .hero-content h1 {
-        font-size: clamp(38px, 7vw, 58px);
-    }
-
-    .hero-content h2 {
-        font-size: clamp(18px, 3vw, 22px);
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons,
-    .social-links {
-        justify-content: center;
-    }
-
-    .hero-image {
-        flex: 0 1 auto;
-        width: 100%;
-        max-width: 340px;
-        margin: 0 auto;
-    }
-}
-
-/* Mobile Phones */
-@media (max-width: 600px) {
-    .hero {
-        min-height: auto;
-        padding: 45px 6% 55px;
-        gap: 32px;
-    }
-
-    .hero-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-        margin-bottom: 16px;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(34px, 9vw, 46px);
-        line-height: 1.15;
+        font-size: clamp(30px, 4.5vw, 42px);
         overflow-wrap: break-word;
     }
 
     .hero-content h2 {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
     }
 
     .hero-description {
         font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 11px 13px;
+        font-size: 12px;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    .hero-image {
+        flex: 0 1 36%;
+        width: 36%;
+        max-width: 280px;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        border: 2px solid rgba(197, 166, 106, 0.7);
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 28px;
+        padding: 42px 6% 50px;
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .hero-label {
+        font-size: 10px;
         line-height: 1.8;
-        margin-bottom: 24px;
+        letter-spacing: 0.8px;
+        margin-bottom: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(32px, 9vw, 44px);
+        line-height: 1.15;
+        margin-bottom: 14px;
+    }
+
+    .hero-content h2 {
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0 auto 24px;
     }
 
     .hero-buttons {
@@ -910,17 +946,32 @@
 
     .primary-btn,
     .secondary-btn {
+        display: block;
         width: 100%;
         text-align: center;
         padding: 13px 16px;
     }
 
     .social-links {
-        margin-top: 24px;
-        gap: 16px;
+        justify-content: center;
+        margin-top: 22px;
     }
 
     .hero-image {
+        flex: none;
+        width: 100%;
         max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 2px solid rgba(197, 166, 106, 0.7);
+        border-radius: 20px;
+        box-shadow: none;
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 }

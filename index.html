@@ -71,12 +71,14 @@
                                     </label>
 
                                     <a href="./documents/CV of Md. Rafiqul Islam.pdf" class="primary-btn"
-                                        download="CV of Md. Rafiqul Islam.pdf">
+                                        id="cv-download-confirm" download="CV of Md. Rafiqul Islam.pdf">
                                         Download CV
                                     </a>
                                 </div>
                             </div>
+
                         </div>
+                        <div id="cv-toast" class="cv-toast" role="status" aria-live="polite"></div>
                     </div>
 
                 </div>
@@ -369,6 +371,69 @@
         </footer>
 
     </main>
+
+    <script>
+        const cvButton = document.getElementById('cv-download-confirm');
+        const cvToast = document.getElementById('cv-toast');
+        const cvToggle = document.getElementById('cv-confirm-toggle');
+
+        let toastTimer;
+
+        function showCVToast(message) {
+            cvToast.textContent = message;
+            cvToast.classList.add('show');
+
+            clearTimeout(toastTimer);
+
+            toastTimer = setTimeout(() => {
+                cvToast.classList.remove('show');
+            }, 3500);
+        }
+
+        cvButton.addEventListener('click', async function (event) {
+            event.preventDefault();
+
+            // Close the confirmation popup
+            cvToggle.checked = false;
+
+            // Show the loading notification
+            showCVToast('Downloading your CV…');
+
+            try {
+                // Wait for the PDF to be received
+                const response = await fetch(cvButton.href);
+
+                if (!response.ok) {
+                    throw new Error('Unable to download the CV.');
+                }
+
+                const pdfBlob = await response.blob();
+                const fileURL = URL.createObjectURL(pdfBlob);
+
+                // Start downloading the received PDF
+                const downloadLink = document.createElement('a');
+                downloadLink.href = fileURL;
+                downloadLink.download =
+                    cvButton.getAttribute('download');
+
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                downloadLink.remove();
+
+                // Release the temporary file URL
+                setTimeout(() => {
+                    URL.revokeObjectURL(fileURL);
+                }, 1000);
+
+                // Show success notification
+                showCVToast('CV has been downloaded!');
+
+            } catch (error) {
+                console.error(error);
+                showCVToast('Download failed. Please try again.');
+            }
+        });
+    </script>
 
 </body>
 

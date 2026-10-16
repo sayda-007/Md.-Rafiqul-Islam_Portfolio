@@ -247,6 +247,55 @@
     color: #082F24;
 }
 
+/* CV Download Toast Notification */
+.cv-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 3000;
+
+    max-width: calc(100vw - 40px);
+    padding: 16px 22px;
+    border-left: 4px solid #C5A66A;
+    border-radius: 8px;
+
+    background-color: #082F24;
+    color: #F5F3EA;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.cv-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .cv-toast {
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        max-width: none;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) { .cv-modal-actions { flex-direction: column; align-items: stretch; } .cv-modal-actions .primary-btn, .cv-cancel-btn { width: 100%; text-align: center; box-sizing: border-box; } }
+
+
 .hero-image {
     flex: 0 1 380px;
     max-width: 380px;

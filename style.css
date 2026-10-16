@@ -461,6 +461,76 @@
     }
 }
 
+/* Self-Assessment & Key Skills */
+.assessment {
+    padding: 100px 7%;
+    background-color: #F5F3EA;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    position: relative;
+}
+
+.assessment-column,
+.key-skills-column {
+    padding: 10px 0;
+}
+
+.key-skills-column {
+    border-left: 1px solid #C5A66A;
+    padding-left: 50px;
+}
+
+.assessment h2 {
+    color: #082F24;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 28px;
+}
+
+.assessment-list,
+.key-skills-list {
+    list-style: none;
+    display: grid;
+    gap: 18px;
+}
+
+.assessment-list li,
+.key-skills-list li {
+    position: relative;
+    padding-left: 28px;
+    color: #36463D;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.assessment-list li::before,
+.key-skills-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #8B6D34;
+    font-weight: 700;
+}
+
+/* Responsive Split Layout */
+@media (max-width: 700px) {
+    .assessment {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 70px 6%;
+    }
+
+    .key-skills-column {
+        border-left: none;
+        border-top: 1px solid #C5A66A;
+        padding-left: 0;
+        padding-top: 35px;
+    }
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 7%;

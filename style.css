@@ -814,11 +814,11 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 14px 20px;
+        gap: 18px 20px;
     }
 
     .nav-links a {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .linkedin-btn {

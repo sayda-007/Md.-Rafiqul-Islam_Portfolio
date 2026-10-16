@@ -48,16 +48,42 @@
                     </a>
 
 
-                    <a href="./documents/CV of Md. Rafiqul Islam.pdf" class="secondary-btn"
-                        download="CV of Md. Rafiqul Islam.pdf">
-                        Download CV
-                    </a>
+                    <div class="cv-download">
+                        <input type="checkbox" id="cv-confirm-toggle" class="cv-confirm-toggle">
+
+                        <!-- Opens the confirmation popup -->
+                        <label for="cv-confirm-toggle" class="secondary-btn cv-open-btn">
+                            Download CV
+                        </label>
+
+                        <!-- Confirmation popup -->
+                        <div class="cv-modal-overlay">
+                            <div class="cv-modal" role="dialog" aria-labelledby="cv-modal-title">
+                                <h2 id="cv-modal-title">Download CV?</h2>
+
+                                <p>
+                                    Would you like to download Rafiqul's CV to your device?
+                                </p>
+
+                                <div class="cv-modal-actions">
+                                    <label for="cv-confirm-toggle" class="cv-cancel-btn">
+                                        Cancel
+                                    </label>
+
+                                    <a href="./documents/CV of Md. Rafiqul Islam.pdf" class="primary-btn"
+                                        download="CV of Md. Rafiqul Islam.pdf">
+                                        Download CV
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
                 <!-- Social Media Links -->
                 <div class="social-links">
-                    
+
                     <a href="https://www.linkedin.com/in/rafiqul325" class="social-icon" target="_blank"
                         rel="noopener noreferrer" aria-label="LinkedIn profile">
                         <img src="./assets/linkedin.png" alt="LinkedIn">
